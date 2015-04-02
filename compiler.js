@@ -20,7 +20,7 @@
             compilers[extension] = compiler;
         };
 
-        Templatist.compile = function(paths, relativePath, targetPath, callback) {
+        Templatist.compile = function(paths, relativePath, callback) {
             var ext = path.extname(relativePath).substr(1);
             var compiler = compilers[ext];
 
@@ -29,7 +29,7 @@
                 return;
             }
 
-            compiler(paths, relativePath, targetPath, callback);
+            compiler(paths, relativePath, callback);
         };
     };
 }));
