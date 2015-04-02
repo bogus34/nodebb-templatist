@@ -1,0 +1,14 @@
+{
+  "name": "nodebb-templatist",
+  "version": "0.0.1",
+  "description": "Temlatist for NodeBB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Alexander Bogdanov <andorn@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "merge-util": "^0.3.1"
+  }
+}
