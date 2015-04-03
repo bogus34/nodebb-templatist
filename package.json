@@ -4,7 +4,8 @@
   "description": "Temlatist for NodeBB",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepublish": "cat renderer.js compiler.js index.js > client.js"
   },
   "author": "Alexander Bogdanov <andorn@gmail.com>",
   "license": "ISC",

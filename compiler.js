@@ -10,7 +10,7 @@
         module.exports = factory(require('path'));
     } else {
         // Browser globals (root is window)
-        factory(root.path)(root.Templatist);
+        root.TemplatistCompiler = factory(root.path);
     }
 }(this, function (path) {
     return function(Templatist) {

@@ -11,7 +11,7 @@
         module.exports = factory();
     } else {
         // Browser globals (root is window)
-        factory()(root.Templatist);
+        root.TemplatistRenderer = factory();
     }
 }(this, function () {
     return function(Templatist) {
