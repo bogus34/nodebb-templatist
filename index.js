@@ -8,7 +8,7 @@
         // Node. Does not work with strict CommonJS, but
         // only CommonJS-like environments that support module.exports,
         // like Node.
-        module.exports = factory(require('./compiler'), require('./renderer'), require('./express'));
+        module.exports = factory(require('./lib/compiler'), require('./lib/renderer'), require('./lib/express'));
     } else {
         // Browser globals (root is window)
         root.Templatist = factory(root.TemplatistCompiler, root.TemplatistRenderer);
