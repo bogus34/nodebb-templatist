@@ -84,7 +84,15 @@
             }
 
             try {
-                loaders[ext](name, callback);
+                loaders[ext](name, function(err, render) {
+                    if (err) {
+                        callback(err);
+                        return;
+                    }
+
+                    templatesCache[name] = render;
+                    callback(null, render);
+                });
             } catch (err) {
                 callback(err);
             };
@@ -104,8 +112,7 @@
             if (typeof name != 'string'
                 || typeof block != 'string'
                 || typeof data != 'object'
-                || typeof callback != 'function')
-            {
+                || typeof callback != 'function') {
                 console.log("[Templatist warning] render arguments looks wrong: " + arguments);
             }
 
@@ -121,6 +128,10 @@
                     callback(err);
                 }
             });
+        };
+
+        Templatist.flush = function() {
+            templatesCache = {};
         };
     };
 }));
